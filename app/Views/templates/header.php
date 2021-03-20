@@ -23,6 +23,9 @@
           <li class="nav-item <?= ($uri->getSegment(1) == 'dashboard' ? 'active' : null) ?>">
             <a class="nav-link"  href="/dashboard">Dashboard</a>
           </li>
+          <li class="nav-item <?= ($uri->getSegment(1) == 'dashboard' ? 'active' : null) ?>">
+            <a class="nav-link"  href="/film">Film</a>
+          </li>
        </ul>
         <ul class="navbar-nav my-2 my-lg-0">
           <li class="nav-item">

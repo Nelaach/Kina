@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\Film_formular;
 
 
 class Users extends BaseController
@@ -152,4 +153,45 @@ class Users extends BaseController
 		echo view('frontend/uvodni');
 		echo view('templates/footer');
 	}
+	
+	public function film() {
+		echo view('templates/header');
+		echo view('film_formular');
+		echo view('templates/footer');
+
+	}
+	public function form() {
+		$data = [ 'cesky_nazev' =>$this->request->getVar('cesky_nazev'),
+		'originalni_nazev' =>$this->request->getVar('originalni_nazev'),
+		'delka_filmu' =>$this->request->getVar('delka_filmu'),
+		'typ_filmu' =>$this->request->getVar('typ_filmu'),
+		'zeme_idZeme' =>$this->request->getVar('zeme_idZeme'),
+		'zanrFilmu_idZanrFilmu' =>$this->request->getVar('zanrFilmu_idZanrFilmu'),
+		'promitani_idPromitani' =>$this->request->getVar('promitani_idPromitani'),
+		'jazyky_idJazyky' =>$this->request->getVar('jazyky_idJazyky') ];
+
+		
+		/*
+		$db =  \Config \Database::connect();
+		$builder = $db->table('film');
+		$builder->insert($data); */
+
+		$model = new Film_formular();
+		if ($model->insert($data))
+		{
+			echo view('templates/header');
+			?><style>.center {text-align: center;color: red;}</style><?php
+			echo "<h3 class='center'>Úspěšně přidáno</h3>";
+			echo view('film_formular');
+			echo view('templates/footer');
+		}
+		else 
+		{
+			echo "nepřidáno";
+		}
+	
+
+}
+
+
 }
