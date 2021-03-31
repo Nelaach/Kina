@@ -21,11 +21,21 @@
       <?php if (session()->get('isLoggedIn')): ?>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item <?= ($uri->getSegment(1) == 'dashboard' ? 'active' : null) ?>">
-            <a class="nav-link"  href="/dashboard">Dashboard</a>
+            <a class="nav-link"  href="/film">Přidat film</a>
           </li>
           <li class="nav-item <?= ($uri->getSegment(1) == 'dashboard' ? 'active' : null) ?>">
-            <a class="nav-link"  href="/film">Film</a>
+            <a class="nav-link"  href="/prehled_filmu">Přehled filmů</a>
           </li>
+          <li class="nav-item <?= ($uri->getSegment(1) == 'dashboard' ? 'active' : null) ?>">
+            <a class="nav-link"  href="/vstupenky">Vstupenky</a>
+          </li>
+          <li class="nav-item <?= ($uri->getSegment(1) == 'dashboard' ? 'active' : null) ?>">
+            <a class="nav-link"  href="/sal">Nový sál</a>
+          </li>
+          <li class="nav-item <?= ($uri->getSegment(1) == 'dashboard' ? 'active' : null) ?>">
+            <a class="nav-link"  href="/prehled_salu">Přehled sálů</a>
+          </li>
+ 
        </ul>
         <ul class="navbar-nav my-2 my-lg-0">
           <li class="nav-item">

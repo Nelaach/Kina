@@ -34,13 +34,13 @@
       .main-block {
       justify-content: center;
       align-items: center;
-      width: 100%; 
-      min-height: 100%;
+      width: auto; 
+      min-height: auto;
       background: url("/uploads/media/default/0001/01/e7a97bd9b2d25886cc7b9115de83b6b28b73b90b.jpeg") no-repeat center;
       background-size: cover;
       }
       form {
-      width: 80%; 
+      width: auto; 
       padding: 80px;
       margin-bottom: 200px;
       background: grey;
@@ -50,7 +50,6 @@
       margin-bottom: 20px;
       background: transparent;
       border: none;
-      border-bottom: 1px solid #eee;
       }
       input::placeholder {
       color: #eee;
@@ -125,47 +124,35 @@
       }
 
     </style>
+
   </head>
   <body>
     <div class="main-block">
-      <h1>Nový film</h1>
-	  <form method="post" action="<?php echo base_url('/form') ?>">
+      <h1>Nový sál</h1>
+	  <form method="post" action="<?php echo base_url('/Users/novySal') ?>">
         <div class="info">
-          <input type="text" name="cesky_nazev" required="vyžadováno" placeholder="Český název filmu">
-          <input type="text" name="originalni_nazev" required="vyžadováno" placeholder="Původní název filmu">
-          <input type="number" name="delka_filmu" required="vyžadováno" placeholder="Délka filmu">
-          <input type="text" name="typ_filmu" required="vyžadováno" placeholder="Typ filmu">
-          <select class="form-control" name="zeme_idZeme" id="zeme_idZeme">
-            <?php
-            $query = $db->query("SELECT * FROM zeme");
-            foreach ($query->getResult() as $row)
-            { ?> 
-         <option value=<?php echo $row->idZeme?>> <?php echo $row->nazev;}?></option>
+        <div class="row">
+        <div class="col-12">
+          <input type="text" name="nazev" required="vyžadováno" placeholder="Název">
+          </div>
+          <div class="col-12">
+          <input type="number" name="kapacita" required="vyžadováno" placeholder="Kapacita">
+          </div>
+<div class="col-12">
+<div> 3D: </div>
+          <select class="form-control" name="3D" id="3D">
+         <option value="1"> Ano </option>
+         <option value="0"> Ne </option>
           </select>
+          </div>
 
-          <select class="form-control" name="zanrFilmu_idZanrFilmu" id="zanrFilmu_idZanrFilmu">
-            <?php
-            $query = $db->query("SELECT * FROM zanrFilmu");
-            foreach ($query->getResult() as $row)
-            { ?> 
-         <option value=<?php echo $row->idZanrFilmu?>> <?php echo $row->zanrFilmucol;}?></option>
+          <div class="col-12">
+          <div> Prostorový zvuk: </div>
+          <select class="form-control" name="prostorovyZvuk" id="prostorovyZvuk">
+         <option value="1"> Ano </option>
+         <option value="0"> Ne </option>
           </select>
-
-          <select class="form-control" name="promitani_idPromitani" id="promitani_idPromitani">
-            <?php
-            $query = $db->query("SELECT * FROM promitani");
-            foreach ($query->getResult() as $row)
-            { ?> 
-         <option value=<?php echo $row->idPromitani?>> <?php echo $row->datum;}?></option>
-          </select>
-         
-          <select class="form-control" name="jazyky_idJazyky" id="jazyky_idJazyky">
-            <?php
-            $query = $db->query("SELECT * FROM jazyky");
-            foreach ($query->getResult() as $row)
-            { ?> 
-         <option value=<?php echo $row->idJazyky?>> <?php echo $row->nazev;}?></option>
-          </select>
+</div></div>
 
 <div>&nbsp&nbsp </div>
 <div>&nbsp&nbsp </div>

@@ -5,7 +5,9 @@ use CodeIgniter\Model;
 class Film_formular extends Model
 {
     protected $table      = 'film';
+    protected $primaryKey = 'idFilm';
     protected $allowedFields = ['cesky_nazev', 'originalni_nazev', 'delka_filmu', 'typ_filmu', 'zeme_idZeme', 'zanrFilmu_idZanrFilmu','promitani_idPromitani','jazyky_idJazyky'];
+    protected $updatedField  = 'updated_at';
 
 
 }
