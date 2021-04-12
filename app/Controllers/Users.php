@@ -192,7 +192,7 @@ class Users extends BaseController
 			echo view('templates/header');
 			?><style>.center {text-align: center;color: red;}</style><?php
 			echo "<h3 class='center'>Úspěšně přidáno</h3>";
-			echo view('film_formular');
+			echo view('prehled_filmu');
 			echo view('templates/footer');
 		}
 		else 

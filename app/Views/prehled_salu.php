@@ -18,6 +18,8 @@ $results = $query->getResultArray();
       <th scope="col">Kapacita</th>
       <th scope="col">3D</th>
       <th scope="col">Prostorový zvuk</th>
+      <th scope="col"><a href="<?php echo base_url('sal') ?>">Přidat sál</th>
+
     </tr>
   </thead>
   <tbody>

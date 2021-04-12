@@ -23,6 +23,7 @@ $results = $query->getResultArray();
       <th scope="col">Země</th>
       <th scope="col">Žánr</th>
       <th scope="col">Promítání</th>
+      <th scope="col"><a href="<?php echo base_url('film') ?>">Přidat film</th>
     </tr>
   </thead>
   <tbody>
