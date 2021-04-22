@@ -5,3 +5,5 @@
 
 ## Webová stránka
 http://kino.4fan.cz/ <br>
+
+Je nutná registrace pro zobrazení celé webové stránky.
